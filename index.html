@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06100b">
+<title>Wild Animals Add-on</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+min-height:100vh;
+font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+color:#f4fff7;
+background:
+radial-gradient(circle at 15% 10%,rgba(44,255,130,.16),transparent 30%),
+radial-gradient(circle at 85% 90%,rgba(80,255,160,.11),transparent 30%),
+linear-gradient(135deg,#020804,#07180e 55%,#020604);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+overflow-x:hidden
+}
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.5;
+background-image:
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+background-size:28px 28px;
+mask-image:linear-gradient(to bottom,#000,transparent 80%)
+}
+.container{
+position:relative;
+width:min(940px,100%);
+padding:clamp(24px,5vw,42px);
+border:1px solid rgba(255,255,255,.10);
+border-radius:32px;
+background:rgba(255,255,255,.055);
+backdrop-filter:blur(24px);
+box-shadow:0 35px 100px rgba(0,0,0,.52);
+overflow:hidden
+}
+.container:after{
+content:"WILD";
+position:absolute;
+right:-16px;
+top:-25px;
+font-size:clamp(110px,24vw,240px);
+font-weight:1000;
+letter-spacing:-14px;
+color:rgba(255,255,255,.025);
+pointer-events:none
+}
+.logo{
+position:relative;
+z-index:1;
+width:66px;
+height:66px;
+display:grid;
+place-items:center;
+border-radius:21px;
+background:linear-gradient(135deg,#d1ffe0,#43e983);
+color:#041109;
+font-size:29px;
+font-weight:1000;
+margin-bottom:24px;
+box-shadow:0 14px 36px rgba(47,235,126,.25)
+}
+h1{
+position:relative;
+z-index:1;
+font-size:clamp(40px,8vw,78px);
+line-height:.97;
+letter-spacing:-3.8px;
+max-width:850px
+}
+h1 span{color:#79ffab}
+.desc{
+position:relative;
+z-index:1;
+margin-top:20px;
+max-width:760px;
+color:#abc0b2;
+font-size:18px;
+line-height:1.8
+}
+.download{
+position:relative;
+z-index:2;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+width:100%;
+margin-top:28px;
+padding:18px 20px;
+border-radius:18px;
+background:linear-gradient(135deg,#d0ffdd,#60ef99,#1dcd65);
+color:#041108;
+font-size:18px;
+font-weight:950;
+text-decoration:none;
+box-shadow:0 18px 42px rgba(31,214,105,.23);
+transition:transform .18s ease,box-shadow .18s ease
+}
+.download:hover{
+transform:translateY(-2px);
+box-shadow:0 24px 48px rgba(31,214,105,.30)
+}
+.download:active{transform:translateY(0)}
+.icon{
+width:22px;
+height:22px;
+border:2px solid currentColor;
+border-radius:7px;
+display:grid;
+place-items:center;
+font-size:12px;
+font-weight:1000
+}
+.grid{
+position:relative;
+z-index:1;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+margin-top:18px
+}
+.card{
+padding:20px;
+border:1px solid rgba(255,255,255,.085);
+border-radius:19px;
+background:rgba(255,255,255,.045)
+}
+.card small{
+color:#81958a;
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:1px
+}
+.card strong{
+display:block;
+margin-top:8px;
+font-size:17px
+}
+.credit{
+position:relative;
+z-index:1;
+margin-top:18px
+}
+.credit-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:18px;
+padding:14px 0;
+border-bottom:1px solid rgba(255,255,255,.07)
+}
+.credit-row:last-child{border-bottom:0}
+.credit-row span{color:#80938a}
+.credit-row strong{text-align:right}
+.note{
+position:relative;
+z-index:1;
+margin-top:15px;
+padding:14px 16px;
+border-radius:15px;
+border:1px solid rgba(125,255,173,.12);
+background:rgba(125,255,173,.05);
+color:#a9c7b2;
+font-size:14px;
+line-height:1.65
+}
+footer{
+position:relative;
+z-index:1;
+margin-top:22px;
+text-align:center;
+color:#68796e;
+font-size:13px
+}
+@media(max-width:680px){
+.container{padding:24px;border-radius:26px}
+.grid{grid-template-columns:1fr}
+h1{letter-spacing:-2.3px}
+.download{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="logo">W</div>
+
+<h1>ดาวน์โหลดแอนออน <span>wild-animals</span></h1>
+
+<div class="desc">
+Wild Animals Add-on สำหรับ Minecraft Bedrock<br>
+ใช้ได้สำหรับเวอร์ชั่น 1.21 ขึ้นไป
+</div>
+
+<a class="download" href="wild-animals.mcaddon" download="wild-animals.mcaddon">
+<span class="icon">↓</span>
+ดาวน์โหลด wild-animals
+</a>
+
+<div class="grid">
+<div class="card">
+<small>ไฟล์</small>
+<strong>wild-animals.mcaddon</strong>
+</div>
+
+<div class="card">
+<small>เวอร์ชั่น</small>
+<strong>1.21 ขึ้นไป</strong>
+</div>
+
+<div class="card">
+<small>ประเภท</small>
+<strong>Minecraft Add-on</strong>
+</div>
+</div>
+
+<div class="card credit">
+<small>เครดิต</small>
+
+<div class="credit-row">
+<span>Creator</span>
+<strong>@2026</strong>
+</div>
+
+<div class="credit-row">
+<span>YouTube</span>
+<strong>BHK2 Mambo</strong>
+</div>
+
+<div class="credit-row">
+<span>TikTok</span>
+<strong>add.on</strong>
+</div>
+</div>
+
+<div class="note">
+กดปุ่มดาวน์โหลดเพื่อรับไฟล์ <b>wild-animals.mcaddon</b> โดยตรง ไฟล์แอนออนอยู่ในโฟลเดอร์เดียวกับหน้าเว็บ
+</div>
+
+<footer>
+Wild Animals Add-on · @2026 · YouTube:BHK2 Mambo · TikTok:add.on
+</footer>
+</div>
+</body>
+</html>
